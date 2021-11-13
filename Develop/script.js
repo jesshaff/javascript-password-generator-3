@@ -17,7 +17,7 @@ window.onload = alert("Welcome! Select 'Generate Password' to generate your rand
 
 // Verification that Generate Password button works 
 function generatePassword() {
-// Random generation to return final password in the end
+// Random generator to return final password in the end
   var result = "";
 
   console.log("The 'Generate Password' button has been clicked.");
@@ -45,15 +45,15 @@ function generatePassword() {
       userCharChoices = userCharChoices.concat(abcUppercaseArr);
     }
     if (includeLowercase) {
-      // add uppercase array to userCharChoices array 
+      // add lowercase array to userCharChoices array 
       userCharChoices = userCharChoices.concat(abcLowercaseArr);
     }
     if (includeNumeric) {
-      // add uppercase array to userCharChoices array 
+      // add numeric array to userCharChoices array 
       userCharChoices = userCharChoices.concat(numericArr);
     }
     if (includeSpecialChars) {
-      // add uppercase array to userCharChoices array 
+      // add specialChars array to userCharChoices array 
       userCharChoices = userCharChoices.concat(specialCharsArr);
     }
 
@@ -61,11 +61,10 @@ function generatePassword() {
     // Generate password based on that criteria 
     // take length of password user wants
     for (var i = 0; i < length; i++) {
-      // randomly select a character that fits the criteria using math.random and math.floor
+      // randomly select a character that fits the criteria 
       var randomNum = Math.floor(Math.random() * userCharChoices.length);
-      password += userCharChoices[randomNum];
       // assign number to userCharChoices array
-      // password + ? 
+      password += userCharChoices[randomNum];
     }
 
   }
@@ -83,7 +82,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
